@@ -1,31 +1,22 @@
 {
-  "name": "test-workspace",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "name": "test-new",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "./src",
+  "sourceRoot": "test-new/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/test-workspace",
-        "index": "./src/index.html",
-        "main": "./src/main.ts",
-        "polyfills": [
-          "zone.js"
-        ],
-        "tsConfig": "./tsconfig.app.json",
-        "assets": [
-          "./src/favicon.ico",
-          "./src/assets"
-        ],
-        "styles": [
-          "./src/styles.css"
-        ],
+        "outputPath": "dist/test-new",
+        "index": "test-new/src/index.html",
+        "main": "test-new/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "test-new/tsconfig.app.json",
+        "assets": ["test-new/src/favicon.ico", "test-new/src/assets"],
+        "styles": ["test-new/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -59,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "test-workspace:build:production"
+          "browserTarget": "test-new:build:production"
         },
         "development": {
-          "browserTarget": "test-workspace:build:development"
+          "browserTarget": "test-new:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -70,28 +61,21 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "test-workspace:build"
+        "browserTarget": "test-new:build"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "./src/**/*.ts",
-          "./src/**/*.html"
-        ]
+        "lintFilePatterns": ["test-new/**/*.ts", "test-new/**/*.html"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectName}"
-      ],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "jest.config.app.ts",
+        "jestConfig": "test-new/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
@@ -104,7 +88,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "test-workspace:build"
+        "buildTarget": "test-new:build"
       }
     }
   }

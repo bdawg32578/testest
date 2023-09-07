@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
-
+import { HlmButtonDirective } from '@spartan-ng/button-helm'
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [HlmButtonDirective],
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  template: `<button hlmBtn>Hello from {{title}}</button>`
 })
 export class AppComponent {
-  title = 'test-workspace';
+  title = 'sparta';
 }

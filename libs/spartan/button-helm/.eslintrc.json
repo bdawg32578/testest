@@ -1,4 +1,7 @@
 {
+  "extends": [
+    "../../../.eslintrc.base.json"
+  ],
   "ignorePatterns": [
     "!**/*"
   ],
@@ -23,7 +26,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "hlm",
             "style": "camelCase"
           }
         ],
@@ -31,7 +34,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": "hlm",
             "style": "kebab-case"
           }
         ]
@@ -46,8 +49,5 @@
       ],
       "rules": {}
     }
-  ],
-  "extends": [
-    "./.eslintrc.base.json"
   ]
 }
